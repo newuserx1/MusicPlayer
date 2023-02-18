@@ -25,19 +25,19 @@ load_dotenv()
 
 class Config:
     def __init__(self) -> None:
-        self.API_ID: str = os.environ.get("API_ID", None)
-        self.API_HASH: str = os.environ.get("API_HASH", None)
-        self.SESSION: str = os.environ.get("SESSION", None)
+        self.API_ID: str = os.environ.get("API_ID", 17810412)
+        self.API_HASH: str = os.environ.get("API_HASH", "bd9cd7df354fb74e2f9ec88f6ee4de48")
+        self.SESSION: str = os.environ.get("SESSION", "BQAvzwSg2bTKfdmx-hZ_TyqIpax8hEGjXFS2ONMT-GTuQAantENOKNknMpKW0hlNX66utZcGDNqbqxdyesTWeOnSnygbvWwZbJPRTYB8HpYlf271qM2nEtWuShI_hosR3ZunWi5Fm-ycTnLtlxtoerpxu8dKwGgCxgJ3E8Re2HQYD87IRGaZcbnIlHjiwW9IYAPq9KLuo5Wc2f05iuAmR68ORRZxxM4fJtBLUJW46LifvRb4Cd579ZdpEtajB7kCprloAaNiskDrhN0Huy6aICX6711mT3Tbcpn3v_W0QsA1oHQbzBQ_2FdJuZDY9XSSwCDVulSwnn11gcYff3_3AC04AAAAAURUXX8A")
         self.BOT_TOKEN: str = os.environ.get("BOT_TOKEN", None)
         self.SUDOERS: list = [
-            int(id) for id in os.environ.get("SUDOERS", " ").split() if id.isnumeric()
+            int(id) for id in os.environ.get("SUDOERS", "1256202333").split() if id.isnumeric()
         ]
         if not self.SESSION or not self.API_ID or not self.API_HASH:
             print("ERROR: SESSION, API_ID and API_HASH is required!")
             quit(0)
         self.SPOTIFY: bool = False
         self.QUALITY: str = os.environ.get("QUALITY", "high").lower()
-        self.PREFIXES: list = os.environ.get("PREFIX", "!").split()
+        self.PREFIXES: list = os.environ.get("PREFIX", "/").split()
         self.LANGUAGE: str = os.environ.get("LANGUAGE", "en").lower()
         self.STREAM_MODE: str = (
             "audio"
